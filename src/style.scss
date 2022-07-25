@@ -1,0 +1,14 @@
+@import '/src/scss/breakpoints';
+
+
+h1 {
+    color: red;
+
+    @include tablet {
+        color: blue;
+    }
+    
+    @include desktop {
+        color: green;
+    }
+}

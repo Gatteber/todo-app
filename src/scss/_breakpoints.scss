@@ -1,0 +1,31 @@
+$breakpoints: (
+    "mobile" : 480px,
+    "tablet": 720px,
+    "desktop": 960px,
+);
+
+@mixin mobile {
+    //get mobile breakpoint from object
+    @media(min-width: map-get($breakpoints, "mobile")) {
+        @content
+    }
+};
+
+@mixin tablet {
+    @media(min-width: map-get($breakpoints, "tablet")) {
+        @content
+    }
+};
+
+@mixin desktop {
+    @media(min-width: map-get($breakpoints, "desktop")) {
+        @content
+    }
+};
+
+//extra breakpoint
+@mixin breakpoint($bp: 0) {
+    @media (min-width: $bp) {
+        @content
+    }
+};
