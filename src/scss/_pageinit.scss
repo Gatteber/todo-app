@@ -1,9 +1,16 @@
 //notes
 // stone 50 = background stone 300 = division lines
+@use './breakpoints';
+@font-face {
+    font-family: 'Saira';
+    src: url('/src/Saira.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
 
 #content {
     display: grid;
-    grid-template-rows: 10vh 65vh 10vh;
+    grid-template-rows: 10vh 80vh 10vh;
     grid-template-areas: 
     "header"
     "con"
@@ -13,6 +20,24 @@
 .header {
     grid-area: header;
     background-color: $stone600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem 0 2rem;
+    
+    .header-icon {
+        width: 3rem;
+        height: 3rem;
+        background-image: url(/src/img/check-outline.svg);
+        //filter property to adjust the svg to stone100
+        filter: invert(100%) sepia(33%) saturate(97%) hue-rotate(171deg) brightness(113%) contrast(92%);
+    }
+
+    .header-text {
+        color: $stone100;
+        font-size: 3rem;
+        font-family: 'Saira';
+    }
 }
 
 .nav {
@@ -24,3 +49,4 @@
     grid-area: con;
     background-color: $stone50;
 }
+

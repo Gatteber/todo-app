@@ -1,3 +1,6 @@
+//imports
+// import checkMark from "./img/check-outline.svg";
+
 //helper module
 const domManip = (() => {
     const makeEl = (parent, element, classlist, html=null) => {
@@ -5,7 +8,6 @@ const domManip = (() => {
         e.classList.add(`${classlist}`);
         e.innerHTML = html;
         parent.appendChild(e);
-        return makeEl
     }
     
     //grab elem
@@ -21,6 +23,8 @@ const renderPage = (() => {
     domManip.makeEl(getContent, 'div', 'nav');
     domManip.makeEl(getContent, 'div', 'content-body');
     const getHeader = domManip.grabEl('header');
-    getHeader.innerHTML = "HEADER";
+    domManip.makeEl(getHeader, 'div', 'header-icon');
+    domManip.makeEl(getHeader, 'div', 'header-text', "Do It.");
+
 })();
 
