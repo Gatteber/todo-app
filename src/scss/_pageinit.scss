@@ -1,0 +1,26 @@
+//notes
+// stone 50 = background stone 300 = division lines
+
+#content {
+    display: grid;
+    grid-template-rows: 10vh 65vh 10vh;
+    grid-template-areas: 
+    "header"
+    "con"
+    "nav";
+}
+
+.header {
+    grid-area: header;
+    background-color: $stone600;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: $stone600;
+}
+
+.content-body {
+    grid-area: con;
+    background-color: $stone50;
+}

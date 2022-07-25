@@ -1,14 +1,29 @@
+@import '/src/scss/meyer';
 @import '/src/scss/breakpoints';
+@import '/src/scss/colors';
+@import '/src/scss/pageinit';
+
+
+
+
+/* all styles after this overwrite imports/meyer */
+body {
+    background-color: lightcoral;
+    color: red;
+}
 
 
 h1 {
+    background-color: $stone900;
     color: red;
 
     @include tablet {
+        background-color: $stone400;
         color: blue;
     }
     
     @include desktop {
+        background-color: $stone50;
         color: green;
     }
 }
