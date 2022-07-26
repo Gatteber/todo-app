@@ -18,13 +18,40 @@ const domManip = (() => {
 
 //pageload initial DOM render module
 const renderPage = (() => {
+    //header
     const getContent = document.getElementById('content');
     domManip.makeEl(getContent, 'div', 'header');
     domManip.makeEl(getContent, 'div', 'nav');
     domManip.makeEl(getContent, 'div', 'content-body');
     const getHeader = domManip.grabEl('header');
     domManip.makeEl(getHeader, 'div', 'header-icon');
-    domManip.makeEl(getHeader, 'div', 'header-text', "Do It.");
+    domManip.makeEl(getHeader, 'div', 'header-text', "Done.");
+
+    //body
+    const getCardBody = domManip.grabEl('content-body');
+    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+
+    
+    //nav
+    const getNav = domManip.grabEl('nav');
+    const navElements = [
+        'nav-add',
+        'nav-today',
+        'nav-week',
+        'nav-projects'
+    ]
+    navElements.map(item => {
+        domManip.makeEl(getNav, 'div',`${item}`, null);
+    })
 
 })();
 
