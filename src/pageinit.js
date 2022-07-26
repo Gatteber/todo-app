@@ -29,16 +29,27 @@ const renderPage = (() => {
 
     //body
     const getCardBody = domManip.grabEl('content-body');
-    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    domManip.makeEl(getCardBody, 'div', 'card-item');
+    const getcardItem = domManip.grabEl('card-item');
+    domManip.makeEl(getcardItem, 'div', 'card-text', "Go to the Doctor tmr");
+    domManip.makeEl(getcardItem, 'div', 'card-done');
+    domManip.makeEl(getcardItem, 'div', 'card-date', "Jul 31");
+    domManip.makeEl(getcardItem, 'div', 'card-delete');
+
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "Pick up Groceries");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "ok up to 20 characters");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
+    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
 
     
     //nav

@@ -7,10 +7,16 @@
     font-weight: 600;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/src/Quicksand.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 
 #content {
     // display: grid;
-    // grid-template-rows: 10vh 70vh 10vh;
+    // grid-template-rows: 10vh 80vh 10vh;
     // grid-template-areas: 
     // "header"
     // "con"
@@ -86,9 +92,9 @@
     grid-area: con;
     background-color: $stone50;
     font-size: 2rem;
-    color: $stone100;
-    // padding-top: 90px;
-    // padding-bottom: 100px;
+    color: $stone900;
+    margin: 10vh 0 10vh 0;
+    padding: 1rem 0 0 0;
 
     //grid for cards
     display: grid;
@@ -96,11 +102,59 @@
     grid-template-columns: repeat(2, 1fr);
 
     .card-item {
+        font-family: 'Quicksand';
         justify-self: center;
-        margin-top: 1rem;
-        width: 12rem;
-        height: 10rem;
-        background-color: $stone400;
+        margin: 0 0 1rem 0;
+        // width: 10rem;
+        // height: 8rem;
+        width: 20vh;
+        height: 15vh;
+        background-color: $stone200;
+        border: 3px solid $stone400;
+        
+        //grid display for card
+        display: grid;
+        grid-template-rows: (2, 1fr);
+        grid-template-columns: (3, 1fr 2fr 1fr);
+        grid-template-areas: 
+        "text text text"
+        "done date delete";
+        justify-items: center;
+        justify-content: space-between;
+        align-items: end;
+
+        .card-text {
+            align-self: start;
+            grid-area: text;
+            font-size: 1.25rem;
+            margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+        }
+
+        .card-done {
+            grid-area: done;
+            justify-self: start;
+            background-image: url(/src/img/check-outline.svg);
+            width: 1.5rem;
+            height: 1.5rem;
+            margin: 0 0 0.25rem 0.25rem;
+
+        }
+
+        .card-date {
+            grid-area: date;
+            font-size: 1.25rem;
+            margin: 0 0 0.25rem 0;
+        }
+        
+        .card-delete {
+            grid-area: delete;
+            justify-self: end;
+            background-image: url(/src/img/delete-forever.svg);
+            width: 1.5rem;
+            height: 1.5rem;
+            margin: 0 0.25rem 0.25rem 0;
+
+        }
     }
 }
 
