@@ -9,8 +9,6 @@ const domManip = (() => {
         e.innerHTML = html;
         parent.appendChild(e);
     }
-    
-    //grab elem
     const grabEl = (e) => { return document.querySelector(`.${e}`)};
 
     return { makeEl, grabEl }
@@ -31,7 +29,7 @@ const renderPage = (() => {
     const getCardBody = domManip.grabEl('content-body');
     domManip.makeEl(getCardBody, 'div', 'card-item');
     const getcardItem = domManip.grabEl('card-item');
-    domManip.makeEl(getcardItem, 'div', 'card-text', "Go to the Doctor tmr");
+    domManip.makeEl(getcardItem, 'div', 'card-text', "Example card");
     domManip.makeEl(getcardItem, 'div', 'card-done');
     domManip.makeEl(getcardItem, 'div', 'card-date', "Jul 31");
     domManip.makeEl(getcardItem, 'div', 'card-delete');
@@ -59,18 +57,14 @@ const renderPage = (() => {
         'nav-today',
         'nav-week',
         'nav-projects'
-    ]
+    ];
     navElements.map(item => {
         domManip.makeEl(getNav, 'div',`${item}`, null);
     })
-
-
-    //to be moved out of navbar -- design only
     const getNavAdd = domManip.grabEl('nav-add');
-    getNavAdd.classList.add('active');
-    domManip.makeEl(getContent, 'div', 'nav-add-menu');
-    const getAddMenuBody = domManip.grabEl('nav-add-menu');
-    domManip.makeEl(getAddMenuBody, 'div', 'nav-menu-add-i', "+ New Item");
-    domManip.makeEl(getAddMenuBody, 'div', 'nav-menu-add-p', "+ New Project");
+    const getNavProjects = domManip.grabEl('nav-projects');
+
+    return { getContent, getNavAdd, getNavProjects }
 })();
 
+export { renderPage, domManip }

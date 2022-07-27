@@ -1,6 +1,7 @@
 //import space
 import "./style.scss";
 import "./pageinit";
+import "./navbar";
 
 //app main module
 const mainApp = (() => {
