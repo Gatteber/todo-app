@@ -64,5 +64,13 @@ const renderPage = (() => {
         domManip.makeEl(getNav, 'div',`${item}`, null);
     })
 
+
+    //to be moved out of navbar -- design only
+    const getNavAdd = domManip.grabEl('nav-add');
+    getNavAdd.classList.add('active');
+    domManip.makeEl(getContent, 'div', 'nav-add-menu');
+    const getAddMenuBody = domManip.grabEl('nav-add-menu');
+    domManip.makeEl(getAddMenuBody, 'div', 'nav-menu-add-i', "+ New Item");
+    domManip.makeEl(getAddMenuBody, 'div', 'nav-menu-add-p', "+ New Project");
 })();
 
