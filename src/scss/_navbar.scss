@@ -19,3 +19,24 @@
         border-bottom: 1px solid colors.$stone50;
     }
 }
+
+.nav-proj-menu {
+    position: fixed;
+    bottom: 10vh;
+    right: 0vh;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 15vh;
+    background-color: colors.$stone600;
+    font-family: 'Quicksand';
+    color: colors.$stone50;
+    font-size: 1.5rem;
+
+    .proj-item {
+        width: 100%;
+        height: 7.5vh;
+        padding: 1rem 0 0 1rem;
+        border-bottom: 1px solid colors.$stone50;
+    }
+}
