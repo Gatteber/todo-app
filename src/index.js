@@ -2,6 +2,7 @@
 import "./style.scss";
 import "./pageinit";
 import "./navbar";
+import "./projectsview";
 
 //app main module
 const mainApp = (() => {

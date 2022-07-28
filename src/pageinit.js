@@ -63,8 +63,23 @@ const renderPage = (() => {
     })
     const getNavAdd = domManip.grabEl('nav-add');
     const getNavProjects = domManip.grabEl('nav-projects');
+    const getNavToday = domManip.grabEl('nav-today');
+    const getNavWeek = domManip.grabEl('nav-week');
+    const navSelectors = [
+        getNavAdd,
+        getNavProjects,
+        getNavToday,
+        getNavWeek,
+    ];
 
-    return { getContent, getNavAdd, getNavProjects }
+    return { 
+        getContent, 
+        getNavAdd, 
+        getNavProjects, 
+        getNavToday, 
+        getNavWeek, 
+        navSelectors 
+    }
 })();
 
 export { renderPage, domManip }

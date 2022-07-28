@@ -1,7 +1,7 @@
-@import '/src/scss/meyer';
-@import '/src/scss/breakpoints';
-@import '/src/scss/colors';
-@import '/src/scss/pageinit';
+@use '/src/scss/meyer';
+@use '/src/scss/breakpoints' as *;
+@use '/src/scss/colors';
+@use '/src/scss/pageinit';
 
 
 
@@ -10,22 +10,22 @@
 /* all styles after this overwrite imports/meyer */
 body {
     // background-color: lightcoral;
-    background-color: $stone50;
+    background-color: colors.$stone50;
     color: red;
 }
 
 
 h1 {
-    background-color: $stone900;
+    background-color: colors.$stone900;
     color: red;
 
     @include tablet {
-        background-color: $stone400;
+        background-color: colors.$stone400;
         color: blue;
     }
     
     @include desktop {
-        background-color: $stone50;
+        background-color: colors.$stone50;
         color: green;
     }
 }

@@ -3,6 +3,10 @@
 ## Items to do
 -add icons/other dependencies to webpack as necessary
 -layout mobile
+ -> Projects menu
+ -> Modal for adding item/project (try to export a modal module?)
+ -> Card Modal (for onclick expansion)
+
 -layout tablet
 -layout desktop
 -js (to be expanded later)
@@ -26,4 +30,7 @@ How to use a module:
 RETURN functions/const that you want to use.
 EXPORT the top level module
 IMPORT the top level module to next doc and all RETURNED functions will be available.
+When you use @use, must import to all files (consider using @forward? in next project) 
 
+console.log(buttonitem.classList == "nav-add active");
+This returns true - so, check for the classlist and render the correct button from the corresponding module(?)

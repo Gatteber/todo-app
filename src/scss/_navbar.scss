@@ -1,0 +1,21 @@
+@use "./colors";
+
+.nav-add-menu {
+    position: fixed;
+    bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 15vh;
+    background-color: colors.$stone600;
+    font-family: 'Quicksand';
+    color: colors.$stone50;
+    font-size: 1.5rem;
+
+    .nav-menu-add-i, .nav-menu-add-p {
+        width: 100%;
+        height: 7.5vh;
+        padding: 1rem 0 0 1rem;
+        border-bottom: 1px solid colors.$stone50;
+    }
+}

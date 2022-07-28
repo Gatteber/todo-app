@@ -1,4 +1,8 @@
 @use './breakpoints';
+@use './colors';
+@use './navbar';
+
+
 @font-face {
     font-family: 'Saira';
     src: url('/src/Saira.ttf') format('truetype');
@@ -27,7 +31,7 @@
     width: 100%;
     height: 10vh;
     grid-area: header;
-    background-color: $stone600;
+    background-color: colors.$stone600;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,10 +47,10 @@
     }
 
     .header-text {
-        color: $stone100;
+        color: colors.$stone100;
         font-size: 3rem;
         font-family: 'Saira';
-        text-shadow: 3px 3px 2px $stone900;
+        text-shadow: 3px 3px 2px colors.$stone900;
         margin: 0 2rem 0 0;
     }
 }
@@ -57,7 +61,7 @@
     bottom: 0;
     width: 100%;
     height: 10vh;
-    background-color: $stone600;
+    background-color: colors.$stone600;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -86,35 +90,15 @@
     }
 
     .active {
-        background-color: $stone200;
-    }
-}
-
-.nav-add-menu {
-    position: fixed;
-    bottom: 10vh;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 15vh;
-    background-color: $stone600;
-    font-family: 'Quicksand';
-    color: $stone50;
-    font-size: 1.5rem;
-
-    .nav-menu-add-i, .nav-menu-add-p {
-        width: 100%;
-        height: 7.5vh;
-        padding: 1rem 0 0 1rem;
-        border-bottom: 1px solid $stone50;
+        background-color: colors.$stone200;
     }
 }
 
 .content-body {
     grid-area: con;
-    background-color: $stone50;
+    background-color: colors.$stone50;
     font-size: 2rem;
-    color: $stone900;
+    color: colors.$stone900;
     margin: 10vh 0 10vh 0;
     padding: 1rem 0 0 0;
 
@@ -131,8 +115,8 @@
         // height: 8rem;
         width: 20vh;
         height: 15vh;
-        background-color: $stone200;
-        border: 3px solid $stone400;
+        background-color: colors.$stone200;
+        border: 3px solid colors.$stone400;
         
         //grid display for card
         display: grid;
