@@ -3,7 +3,7 @@
 ## Items to do
 -add icons/other dependencies to webpack as necessary
 -layout mobile
- -> Projects menu
+ -> Projects menu [x]
  -> Modal for adding item/project (try to export a modal module?)
  -> Card Modal (for onclick expansion)
 
