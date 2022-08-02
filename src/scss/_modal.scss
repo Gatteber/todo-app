@@ -45,12 +45,44 @@
             border: none;
         }
 
-
     }
 
     .modal-form { 
-        padding-top: 1rem;
-        font-size: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem 0 0 0.5rem;
+        font-size: 1.5rem;
         color: colors.$stone900;
+
+        #itemName {
+            font-family: 'Quicksand';
+            font-size: 1.25rem;
+        }
+
+        #itemDesc {
+            font-family: 'Quicksand';
+            font-size: 1.25rem;
+            width: 15rem;
+            height: 3rem;
+        }
+        
+        .item-dd-label {
+            font-family: 'Quicksand';
+            font-size: 1.25rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .item-submit {
+            font-family: 'Quicksand';
+            padding: 0.5rem;
+            font-size: 1.5rem;
+            // background-color: colors.$stone900;
+            // color: colors.$stone50;
+            border: 1px solid colors.$stone700;
+            border-radius: 5px;
+        }
     }
 }

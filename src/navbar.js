@@ -1,4 +1,5 @@
 import { domManip, renderPage } from './pageinit';
+import { modalRender } from "./modalmenu";
 
 //navbar module
 const navBarControl = (() => {
@@ -15,30 +16,30 @@ const navBarControl = (() => {
     return { isActive, open, close, }
 })();
 
-//nav bar event module
-const navBarEvent = (() => {
-    renderPage.navSelectors.map(item => {
-        item.addEventListener ('click', () => {
-            if(!navBarControl.isActive) {
-                navBarControl.open(item);
-                navBarControl.isActive = true;
-                renderNavItem.render(item);
-                setTimeout(() => {
-                    if (navBarControl.isActive) {
-                        navBarControl.close(item);
-                        navBarControl.isActive = false;
-                        renderNavItem.delRender();
-                    }
-                }, "5000");
+// //nav bar event module
+// const navBarEvent = (() => {
+//     renderPage.navSelectors.map(item => {
+//         item.addEventListener ('click', () => {
+//             if(!navBarControl.isActive) {
+//                 navBarControl.open(item);
+//                 navBarControl.isActive = true;
+//                 renderNavItem.render(item);
+//                 setTimeout(() => {
+//                     if (navBarControl.isActive) {
+//                         navBarControl.close(item);
+//                         navBarControl.isActive = false;
+//                         renderNavItem.delRender();
+//                     }
+//                 }, "5000");
 
-            } else if (navBarControl.isActive) {
-                navBarControl.close(item);
-                navBarControl.isActive = false;
-                renderNavItem.delRender();
-            }
-        })
-    })
-})();
+//             } else if (navBarControl.isActive) {
+//                 navBarControl.close(item);
+//                 navBarControl.isActive = false;
+//                 renderNavItem.delRender();
+//             }
+//         })
+//     })
+// })();
 
 const renderNavItem = (() => {
     //check for each item and render it
@@ -47,7 +48,17 @@ const renderNavItem = (() => {
             domManip.makeEl(renderPage.getContent, 'div', 'nav-add-menu');
             const getAddMenuBody = domManip.grabEl('nav-add-menu');
             domManip.makeEl(getAddMenuBody, 'div', 'nav-menu-add-i', "+ New Item");
+            const addItem = domManip.grabEl('nav-menu-add-i');
+            addItem.addEventListener("click", () => {
+                modalRender.render();
+                modalRender.newItem();
+            });
             domManip.makeEl(getAddMenuBody, 'div', 'nav-menu-add-p', "+ New Project");
+            const addProject = domManip.grabEl('nav-menu-add-p');
+            addProject.addEventListener("click", () => {
+                modalRender.render();
+                modalRender.newProject();
+            });
 
         } else if (domElement.classList == "nav-today active") {
             //render today's tasks
@@ -81,3 +92,5 @@ const renderNavItem = (() => {
 
     return { render, delRender };
 })();
+
+export { navBarControl, renderNavItem };

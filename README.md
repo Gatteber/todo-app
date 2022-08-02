@@ -4,8 +4,8 @@
 -add icons/other dependencies to webpack as necessary
 -layout mobile
  -> Projects menu [x]
- -> Modal for adding item/project (try to export a modal module?)
- -> Card Modal (for onclick expansion)
+ -> Modal for adding item/project (try to export a modal module?) [x]
+ -> Card Modal (for onclick expansion) 
 
 -layout tablet
 -layout desktop

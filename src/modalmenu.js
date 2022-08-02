@@ -7,13 +7,19 @@ const modalSettings = (() => {
         };
     }
 
-    const formSettings = {
+    const formSettingsItem = {
         action: "#",
         method: "post",
         id: "add-form",
     }
 
-    return { addSettings, formSettings };
+    const formSettingsProject = {
+        action: "#",
+        method: "post",
+        id: "proj-form",
+    }
+
+    return { addSettings, formSettingsItem, formSettingsProject };
 })();
 
 const formSetter = (() => {
@@ -38,48 +44,81 @@ const modalRender = (() => {
         const getModalMenu = domManip.grabEl('modal-card');
         domManip.makeEl(getModalMenu, 'div', 'modal-card-header');
         const getModalHeader = domManip.grabEl('modal-card-header');
-        domManip.makeEl(getModalHeader, 'div', 'modal-header-text', "New Item");
+        domManip.makeEl(getModalHeader, 'div', 'modal-header-text', "Create...");
         domManip.makeEl(getModalHeader, 'button', 'modal-close-button', "x");
         domManip.makeEl(getModalMenu, 'div', 'modal-form-container');
         const getModalForm = domManip.grabEl('modal-form-container');
         domManip.makeEl(getModalForm, 'form', 'modal-form');
-        const getModalSettings = domManip.grabEl('modal-form');
-        modalSettings.addSettings(getModalSettings, modalSettings.formSettings);
+        //add delete class
+        const getModalBg = domManip.grabEl('modal-bg');
+        getModalBg.classList.add('m-close');
+        const getModalClose = domManip.grabEl('modal-close-button');
+        getModalClose.classList.add('m-close');
+        const getItemToDelete = document.querySelectorAll('.m-close');
+        getItemToDelete.forEach(item => {
+            item.addEventListener("click", () => {
+                delModal();
+            })
+        })
+    }
+
+    const delModal = () => {
+        const getBg = domManip.grabEl('modal-bg');
+        const getCard = domManip.grabEl('modal-card');
+        getBg.parentNode.removeChild(getBg);
+        getCard.parentNode.removeChild(getCard);
     }
 
 
     const newItem = () => {
-    const getModalSettings = domManip.grabEl('modal-form');
-    //name
-    domManip.makeEl(getModalSettings, 'label', 'item-name-label', "Task Name: ");
-    const formNameLabel = domManip.grabEl('item-name-label');
-    formNameLabel.htmlFor = 'itemName';
-    domManip.makeEl(getModalSettings, 'input', 'item-name');
-    const formItemName = domManip.grabEl('item-name');
-    formSetter.formInputSet(formItemName, "text", "item_name", "itemName", "e.g. Cook Dinner");
-    //description
-    domManip.makeEl(getModalSettings, 'label', 'item-desc-label', "Description: ")
-    const descNameLabel = domManip.grabEl('item-desc-label');
-    descNameLabel.htmlFor = 'itemDesc';
-    domManip.makeEl(getModalSettings, "textarea", 'item-desc');
-    const formDescName = domManip.grabEl('item-desc');
-    formSetter.formInputSet(formDescName, 'textarea', 'item_desc', "itemDesc", "Notes...")
-    //dropdown (placeholder)
-    domManip.makeEl(getModalSettings, 'label', 'item-dropdown-label', "Project: ");
-    const formDropLabel = domManip.grabEl('item-dropdown-label');
-    formDropLabel.htmlFor = 'itemDd';
-    domManip.makeEl(getModalSettings, 'select', 'item-dd-label');
-    const formDropItem = domManip.grabEl('item-dd-label');
-    domManip.makeEl(formDropItem, 'option', 'test', "Default");
-    //render other items
+        const getModalSettings = domManip.grabEl('modal-form');
+        modalSettings.addSettings(getModalSettings, modalSettings.formSettingsItem);
+        //name
+        domManip.makeEl(getModalSettings, 'label', 'item-name-label', "Task Name: ");
+        const formNameLabel = domManip.grabEl('item-name-label');
+        formNameLabel.htmlFor = 'itemName';
+        domManip.makeEl(getModalSettings, 'input', 'item-name');
+        const formItemName = domManip.grabEl('item-name');
+        formSetter.formInputSet(formItemName, "text", "item_name", "itemName", "e.g. Cook Dinner");
+        //description
+        domManip.makeEl(getModalSettings, 'label', 'item-desc-label', "Description: ")
+        const descNameLabel = domManip.grabEl('item-desc-label');
+        descNameLabel.htmlFor = 'itemDesc';
+        domManip.makeEl(getModalSettings, "textarea", 'item-desc');
+        const formDescName = domManip.grabEl('item-desc');
+        formSetter.formInputSet(formDescName, 'textarea', 'item_desc', "itemDesc", "Notes...")
+        //dropdown (placeholder)
+        domManip.makeEl(getModalSettings, 'label', 'item-dropdown-label', "Project: ");
+        const formDropLabel = domManip.grabEl('item-dropdown-label');
+        formDropLabel.htmlFor = 'itemDd';
+        domManip.makeEl(getModalSettings, 'select', 'item-dd-label');
+        const formDropItem = domManip.grabEl('item-dd-label');
+        domManip.makeEl(formDropItem, 'option', 'test', "Default");
+        //render other items
 
-    //submit button
-    domManip.makeEl(getModalSettings, 'button', 'item-submit', "Submit");
-    const getItemButton = domManip.grabEl('item-submit');
-    getItemButton.setAttribute("id", "submit");
+        //submit button
+        domManip.makeEl(getModalSettings, 'button', 'item-submit', "Submit");
+        const getItemButton = domManip.grabEl('item-submit');
+        getItemButton.setAttribute("id", "submit");
     }
 
-    return { render, newItem }
+    const newProject = () => {
+        const getModalSettings = domManip.grabEl('modal-form');
+        modalSettings.addSettings(getModalSettings, modalSettings.formSettingsProject);
+        //name
+        domManip.makeEl(getModalSettings, 'label', 'proj-name-label', "Project Name: ");
+        const formNameLabel = domManip.grabEl('proj-name-label');
+        formNameLabel.htmlFor = 'projName';
+        domManip.makeEl(getModalSettings, 'input', 'proj-name');
+        const formItemName = domManip.grabEl('proj-name');
+        formSetter.formInputSet(formItemName, "text", "proj_name", "projName", "e.g. My Cool Project");
+        //submit button
+        domManip.makeEl(getModalSettings, 'button', 'proj-submit', "Submit");
+        const getItemButton = domManip.grabEl('proj-submit');
+        getItemButton.setAttribute("id", "submit");
+    }
+
+    return { render, newItem, newProject }
 })();
 
 export { modalRender };
