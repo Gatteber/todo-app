@@ -114,7 +114,28 @@
             height: 4.5rem;
         }
     }
+}
 
+@include breakpoints.desktop {
+    .nav {
+        background-color: red;
+        position: fixed;
+        left: 0;
+        width: 5rem;
+        height: 90%;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .nav:hover {
+        width: 25%;
+        align-items: flex-start;
+
+        .nav:hover::after {
+            //doesn't work, fix
+            background-color: lightgray;
+        }
+    }
 }
 
 .content-body {
