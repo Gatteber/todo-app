@@ -38,8 +38,5 @@ const mainApp = (() => {
     modalRender.newItem();
     // modalRender.newProject();
 
-    // const modalDisplayControl = () => {
-    //     const getItemMenu = document.querySelector('.')
-    // }
 })();
 

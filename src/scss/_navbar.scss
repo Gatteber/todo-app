@@ -1,4 +1,5 @@
 @use "./colors";
+@use "./breakpoints";
 
 .nav-add-menu {
     position: fixed;
@@ -18,6 +19,11 @@
         padding: 1rem 0 0 1rem;
         border-bottom: 1px solid colors.$stone50;
     }
+    
+    @include breakpoints.tablet {
+        font-size: 2.75rem;
+    }
+
 }
 
 .nav-proj-menu {
@@ -38,5 +44,9 @@
         height: 7.5vh;
         padding: 1rem 0 0 1rem;
         border-bottom: 1px solid colors.$stone50;
+    }
+
+    @include breakpoints.tablet {
+        font-size: 2.5rem;
     }
 }

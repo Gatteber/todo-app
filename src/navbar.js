@@ -16,31 +16,6 @@ const navBarControl = (() => {
     return { isActive, open, close, }
 })();
 
-// //nav bar event module
-// const navBarEvent = (() => {
-//     renderPage.navSelectors.map(item => {
-//         item.addEventListener ('click', () => {
-//             if(!navBarControl.isActive) {
-//                 navBarControl.open(item);
-//                 navBarControl.isActive = true;
-//                 renderNavItem.render(item);
-//                 setTimeout(() => {
-//                     if (navBarControl.isActive) {
-//                         navBarControl.close(item);
-//                         navBarControl.isActive = false;
-//                         renderNavItem.delRender();
-//                     }
-//                 }, "5000");
-
-//             } else if (navBarControl.isActive) {
-//                 navBarControl.close(item);
-//                 navBarControl.isActive = false;
-//                 renderNavItem.delRender();
-//             }
-//         })
-//     })
-// })();
-
 const renderNavItem = (() => {
     //check for each item and render it
     const render = (domElement) => {

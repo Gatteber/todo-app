@@ -1,4 +1,5 @@
 @use "./colors";
+@use "./breakpoints";
 
 .modal-bg {
     position: absolute;
@@ -56,7 +57,8 @@
         font-size: 1.5rem;
         color: colors.$stone900;
 
-        #itemName {
+        //items
+        #itemName, #projName {
             font-family: 'Quicksand';
             font-size: 1.25rem;
         }
@@ -75,14 +77,77 @@
             margin-bottom: 1.5rem;
         }
 
-        .item-submit {
+        .item-submit, .proj-submit {
             font-family: 'Quicksand';
             padding: 0.5rem;
             font-size: 1.5rem;
-            // background-color: colors.$stone900;
-            // color: colors.$stone50;
             border: 1px solid colors.$stone700;
             border-radius: 5px;
+        }
+
+        //projects
+        #projName {
+            margin-bottom: 1.25rem;
+        }
+
+    }
+}
+
+@include breakpoints.tablet {
+    .modal-card {
+        left: 5rem;
+
+
+        .modal-card-header {
+            background-color: colors.$stone600;
+            // background-color: red;
+            justify-content: space-between;
+            padding: 0 2.5rem 0 2.5rem;
+
+
+            .modal-header-text {
+                font-size: 4rem;
+            }
+
+            .modal-close-button {
+                width: 4rem;
+                height: 4.5rem;
+                font-size: 4rem;
+            }
+
+        }
+
+        .modal-form { 
+            gap: 0.75rem;
+            padding: 2rem 0 0 1.5rem;
+            font-size: 2rem;
+    
+            //items
+            #itemName, #projName {
+                font-size: 1.75rem;
+            }
+    
+            #itemDesc {
+                font-size: 1.75rem;
+                width: 21rem;
+                height: 7rem;
+            }
+            
+            .item-dd-label {
+                font-size: 1.75rem;
+                margin-top: 0.5rem;
+                margin-bottom: 1rem;
+            }
+    
+            .item-submit, .proj-submit {
+                padding: 1rem;
+                font-size: 2.5rem;
+            }
+    
+            //projects
+            #projName {
+                margin-bottom: 1.25rem;
+            }
         }
     }
 }

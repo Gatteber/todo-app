@@ -37,7 +37,7 @@ const formSetter = (() => {
 
 //render module
 const modalRender = (() => {
-    
+    //boilerplate
     const render = () => {
         domManip.makeEl(renderPage.getContent, 'div', 'modal-bg');
         domManip.makeEl(renderPage.getContent, 'div', 'modal-card');
@@ -68,7 +68,6 @@ const modalRender = (() => {
         getBg.parentNode.removeChild(getBg);
         getCard.parentNode.removeChild(getCard);
     }
-
 
     const newItem = () => {
         const getModalSettings = domManip.grabEl('modal-form');
