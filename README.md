@@ -34,3 +34,9 @@ When you use @use, must import to all files (consider using @forward? in next pr
 
 console.log(buttonitem.classList == "nav-add active");
 This returns true - so, check for the classlist and render the correct button from the corresponding module(?)
+
+submit form -> preventdefault -> make class -> add to "todo" array, stringify and store in local storage.
+render todo array (of objects).
+date functionality.
+modal click expansion.
+Projects views.

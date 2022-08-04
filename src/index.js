@@ -34,8 +34,8 @@ const navBarEventControl = (() => {
 //app main module
 const mainApp = (() => {
     console.log("I'm from index");
-    modalRender.render();
-    modalRender.newItem();
+    // modalRender.render();
+    // modalRender.newItem();
     // modalRender.newProject();
 
 })();
