@@ -23,7 +23,6 @@
     @include breakpoints.tablet {
         font-size: 2.75rem;
     }
-
 }
 
 .nav-proj-menu {
@@ -49,4 +48,27 @@
     @include breakpoints.tablet {
         font-size: 2.5rem;
     }
+}
+
+@include breakpoints.desktop {
+    .nav-add-menu {
+        top: 5.45rem;
+        left: 13.55rem;
+        bottom: none;
+        border: 1px solid colors.$stone50;
+
+        .nav-menu-add-i, .nav-menu-add-p {
+            padding: 0.5rem 0 0 1rem;
+        }
+    }
+
+    .nav-proj-menu {
+        left: 13.55rem;
+        bottom: 0vh;
+
+        .proj-item {
+            padding: 0.5rem 0 0 1rem;
+        }
+    }
+
 }

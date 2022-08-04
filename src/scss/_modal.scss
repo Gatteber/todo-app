@@ -9,7 +9,6 @@
     height: 100%;
     background-color: colors.$stone900;
     opacity: 0.5;
-
 }
 
 .modal-card {
@@ -45,7 +44,6 @@
             height: 2.5rem;
             border: none;
         }
-
     }
 
     .modal-form { 
@@ -97,13 +95,10 @@
     .modal-card {
         left: 5rem;
 
-
         .modal-card-header {
             background-color: colors.$stone600;
-            // background-color: red;
             justify-content: space-between;
             padding: 0 2.5rem 0 2.5rem;
-
 
             .modal-header-text {
                 font-size: 4rem;
@@ -114,7 +109,6 @@
                 height: 4.5rem;
                 font-size: 4rem;
             }
-
         }
 
         .modal-form { 
@@ -150,4 +144,65 @@
             }
         }
     }
+}
+
+@include breakpoints.desktop {
+    .modal-card {
+        left: 8rem;
+
+        .modal-form {
+            display: grid;
+            grid-template-rows: (1rem, 2rem 1rem, 2rem);
+            grid-template-columns: repeat( 2, 22rem);
+            grid-template-areas:
+            "itemN projN"
+            "item proj"
+            "descN ."
+            "desc  submit";
+
+            margin: none;
+            padding: none;
+
+            .item-name-label, .proj-name-label {
+                grid-area: itemN;
+            }
+
+            #itemName, #projName {
+                grid-area: item;
+            }
+
+            .item-desc-label {
+                grid-area: descN;
+            }
+        
+            #itemDesc {
+                grid-area: desc;
+            }
+
+            .item-dropdown-label {
+                grid-area: projN;
+            }
+        
+            .item-dd-label {
+                margin-top: -0.01rem;
+                align-self: start;
+                grid-area: proj;
+            }
+        
+            .item-submit {
+                align-self: end;
+                grid-area: submit;
+            }
+
+            .proj-submit {
+                grid-area: desc;
+            }
+        }
+    
+
+    }
+
+
+
+
 }
