@@ -1,4 +1,6 @@
 import { domManip, renderPage } from './pageinit';
+import { toDoMaker } from './cardsetup';
+import { cardRender } from './cardcontroller';
 
 const modalSettings = (() => {
     const addSettings = (formItem=null, obj) => {
@@ -92,6 +94,7 @@ const modalRender = (() => {
         formDropLabel.htmlFor = 'itemDd';
         domManip.makeEl(getModalSettings, 'select', 'item-dd-label');
         const formDropItem = domManip.grabEl('item-dd-label');
+        formDropItem.setAttribute("id", "itemDd");
         domManip.makeEl(formDropItem, 'option', 'test', "Default");
         //render other items
 
@@ -99,6 +102,19 @@ const modalRender = (() => {
         domManip.makeEl(getModalSettings, 'button', 'item-submit', "Submit");
         const getItemButton = domManip.grabEl('item-submit');
         getItemButton.setAttribute("id", "submit");
+        getModalSettings.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById('itemName').value;
+            const desc = document.getElementById('itemDesc').value;
+            const proj = document.getElementById('itemDd').value;
+            const newTodo = toDoMaker.toDoItem(name, desc, proj);
+            cardRender.todos.push(newTodo);
+            console.log(cardRender.todos);
+            
+            //reset form and close modal
+            getModalSettings.reset();
+            delModal();
+        })
     }
 
     const newProject = () => {
