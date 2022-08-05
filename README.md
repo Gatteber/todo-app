@@ -40,3 +40,5 @@ render todo array (of objects).
 date functionality.
 modal click expansion.
 Projects views.
+
+Remember to set the max characters for your forms!!

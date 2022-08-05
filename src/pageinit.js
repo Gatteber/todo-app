@@ -27,13 +27,29 @@ const renderPage = (() => {
 
     //body
     const getCardBody = domManip.grabEl('content-body');
-    domManip.makeEl(getCardBody, 'div', 'card-item');
-    const getcardItem = domManip.grabEl('card-item');
-    domManip.makeEl(getcardItem, 'div', 'card-text', "Example card");
-    domManip.makeEl(getcardItem, 'div', 'card-done');
-    domManip.makeEl(getcardItem, 'div', 'card-date', "Jul 31");
-    domManip.makeEl(getcardItem, 'div', 'card-delete');
 
+    const renderBody = (spreadArray) => {
+        //reset
+        for (let i=0; i < spreadArray.length; i++) {
+            getCardBody.innerHTML = null;
+        }
+        
+        spreadArray.map((todo, index) => {
+            console.log(todo);
+            domManip.makeEl(getCardBody, 'div', 'card-item')
+            const getcardItem = domManip.grabEl('card-item');
+            getcardItem.setAttribute('id', `card${index}`)
+            const getCardIndex = document.getElementById(`card${index}`);
+
+            console.log(getCardIndex);
+
+            domManip.makeEl(getCardIndex, 'div', 'card-text', `${todo.itemName}`);
+            domManip.makeEl(getCardIndex, 'div', 'card-done');
+            domManip.makeEl(getCardIndex, 'div', 'card-date', `${todo.completeDate}`);
+            domManip.makeEl(getCardIndex, 'div', 'card-delete');
+        })
+    }
+    
     // domManip.makeEl(getCardBody, 'div', 'card-item', "Pick up Groceries");
     // domManip.makeEl(getCardBody, 'div', 'card-item', "ok up to 20 characters");
     // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
@@ -78,7 +94,8 @@ const renderPage = (() => {
         getNavProjects, 
         getNavToday, 
         getNavWeek, 
-        navSelectors 
+        navSelectors,
+        renderBody, 
     }
 })();
 

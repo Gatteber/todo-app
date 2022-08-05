@@ -109,11 +109,12 @@ const modalRender = (() => {
             const proj = document.getElementById('itemDd').value;
             const newTodo = toDoMaker.toDoItem(name, desc, proj);
             cardRender.todos.push(newTodo);
-            console.log(cardRender.todos);
-            
+            // console.log(cardRender.todos);
+
             //reset form and close modal
             getModalSettings.reset();
             delModal();
+            renderPage.renderBody([...cardRender.localTodos, ...cardRender.todos])
         })
     }
 

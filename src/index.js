@@ -38,5 +38,7 @@ const mainApp = (() => {
     // modalRender.newItem();
     // modalRender.newProject();
 
+    // renderPage.renderBody();
+
 })();
 
