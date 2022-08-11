@@ -109,7 +109,6 @@ const modalRender = (() => {
             const proj = document.getElementById('itemDd').value;
             const newTodo = toDoMaker.toDoItem(name, desc, proj);
             cardRender.todos.push(newTodo);
-            // console.log(cardRender.todos);
 
             //reset form and close modal
             getModalSettings.reset();

@@ -253,7 +253,8 @@
             }
             
             .card-date {
-                font-size: 2.75rem;
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
             }
     
             .card-delete {
@@ -261,6 +262,16 @@
                 height: 3.5rem;
             }
         }
+    }
+
+    @include breakpoints.desktop {
+
+        .card-item {
+            .card-date {
+                font-size: 2rem;
+            }
+        }
+
     }
 }
 

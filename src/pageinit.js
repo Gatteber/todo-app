@@ -1,5 +1,5 @@
-//imports
-// import checkMark from "./img/check-outline.svg";
+import { cardRender } from "./cardcontroller";
+import { projectViewControl } from "./projectsview";
 
 //helper module
 const domManip = (() => {
@@ -30,19 +30,25 @@ const renderPage = (() => {
 
     const renderBody = (spreadArray) => {
         //reset
+        getCardBody.innerHTML = null;
+
+        //make cards
         for (let i=0; i < spreadArray.length; i++) {
-            getCardBody.innerHTML = null;
+            const newCard = document.createElement('div');
+            newCard.setAttribute('id', `card` + [i]);
+            getCardBody.appendChild(newCard);
+            newCard.classList.add('card-item');
+            newCard.addEventListener('click', (e) => {
+                const targetId = e.target.id
+                const findId = targetId.slice(4, 5);
+                projectViewControl.renderItemView(cardRender.todos[findId].itemName, cardRender.todos[findId].itemDesc, cardRender.todos[findId].completeDate, findId);
+            })
         }
-        
+
+        //render
         spreadArray.map((todo, index) => {
             console.log(todo);
-            domManip.makeEl(getCardBody, 'div', 'card-item')
-            const getcardItem = domManip.grabEl('card-item');
-            getcardItem.setAttribute('id', `card${index}`)
             const getCardIndex = document.getElementById(`card${index}`);
-
-            console.log(getCardIndex);
-
             domManip.makeEl(getCardIndex, 'div', 'card-text', `${todo.itemName}`);
             domManip.makeEl(getCardIndex, 'div', 'card-done');
             domManip.makeEl(getCardIndex, 'div', 'card-date', `${todo.completeDate}`);
