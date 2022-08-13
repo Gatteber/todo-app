@@ -14,7 +14,7 @@ const projectViewControl = (() => {
         domManip.makeEl(getModalCard, 'div', 'v-item-desc', desc);
         domManip.makeEl(getModalCard, 'div', 'v-item-date-head', "Date to finish by")
         domManip.makeEl(getModalCard, 'div', 'v-item-date', date);
-        console.log(itemId);
+        // console.log(itemId);
 
         getModalClose.addEventListener('click', () => {
                 const getBg = domManip.grabEl('modal-bg');

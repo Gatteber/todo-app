@@ -1,4 +1,5 @@
 import { cardRender } from "./cardcontroller";
+import { toDoDeleter } from "./cardsetup";
 import { projectViewControl } from "./projectsview";
 
 //helper module
@@ -31,7 +32,7 @@ const renderPage = (() => {
     const renderBody = (spreadArray) => {
         //reset
         getCardBody.innerHTML = null;
-
+        
         //make cards
         for (let i=0; i < spreadArray.length; i++) {
             const newCard = document.createElement('div');
@@ -47,12 +48,31 @@ const renderPage = (() => {
 
         //render
         spreadArray.map((todo, index) => {
-            console.log(todo);
+            // console.log(todo);
             const getCardIndex = document.getElementById(`card${index}`);
             domManip.makeEl(getCardIndex, 'div', 'card-text', `${todo.itemName}`);
             domManip.makeEl(getCardIndex, 'div', 'card-done');
             domManip.makeEl(getCardIndex, 'div', 'card-date', `${todo.completeDate}`);
             domManip.makeEl(getCardIndex, 'div', 'card-delete');
+        })
+
+        //add delete and complete functions
+        const getDoneButtons = document.querySelectorAll('.card-done');
+        getDoneButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const getSliceId = button.parentNode.id;
+                const slicedId = getSliceId.slice(4, 5);
+                toDoDeleter.delThis(slicedId);
+            })
+        })
+
+        const getDeleteButtons = document.querySelectorAll('.card-delete');
+        getDeleteButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const getSliceId = button.parentNode.id;
+                const slicedId = getSliceId.slice(4, 5);
+                toDoDeleter.delThis(slicedId);
+            })
         })
     }
     

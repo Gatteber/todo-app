@@ -1,4 +1,6 @@
 import { endOfToday } from "date-fns";
+import { cardRender } from "./cardcontroller";
+import { renderPage } from "./pageinit";
 
 const toDoMaker = (() => {
     const toDoItem = (itemName, itemDesc, projName) => {
@@ -16,4 +18,14 @@ const toDoMaker = (() => {
     return { toDoItem }
 })();
 
-export { toDoMaker };
+const toDoDeleter = (() => {
+    const delThis = (id) => {
+        // console.log(cardRender.todos[id]);
+        cardRender.todos.splice(id, 1);
+        renderPage.renderBody([...cardRender.localTodos, ...cardRender.todos]);
+    }
+
+    return { delThis };
+})();
+
+export { toDoMaker, toDoDeleter };
