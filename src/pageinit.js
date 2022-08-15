@@ -77,27 +77,7 @@ const renderPage = (() => {
                 toDoDeleter.delThis(slicedId);
             })
         })
-        // const stringArray = JSON.stringify(spreadArray);
-        // // console.log(stringArray);
-        // localStorage.setItem("Parse", stringArray)
-        // console.log(localStorage);
     }
-    
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "Pick up Groceries");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "ok up to 20 characters");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-    // domManip.makeEl(getCardBody, 'div', 'card-item', "test");
-
     
     //nav
     const getNav = domManip.grabEl('nav');

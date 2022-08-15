@@ -45,11 +45,7 @@ const mainApp = (() => {
         const getItem = JSON.parse(localStorage[i]);
         cardRender.todos.push(getItem);
     }
-    // console.log(JSON.parse(localStorage[0]));
-    // console.log(localStorage.length);
-    // console.log(cardRender.todos);
     renderPage.renderBody(cardRender.todos);
     localStorage.clear();
-
 })();
 

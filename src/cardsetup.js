@@ -1,14 +1,10 @@
-import { endOfToday } from "date-fns";
+import { format } from "date-fns";
 import { cardRender } from "./cardcontroller";
 import { renderPage } from "./pageinit";
 
 const toDoMaker = (() => {
     const toDoItem = (itemName, itemDesc, projName) => {
-        //extract date and slice
-        const date = endOfToday();
-        const todaysDate = date.toString().slice(4, 10);
-
-        let completeDate = todaysDate;
+        let completeDate = format(new Date(), "MMM dd");
         let projList = [];
         let isComplete = false;
     

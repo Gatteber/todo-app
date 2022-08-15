@@ -1,4 +1,6 @@
 import { domManip, renderPage } from './pageinit';
+import { format } from 'date-fns';
+import { cardRender } from './cardcontroller';
 
 //project view module
 const projectViewControl = (() => {
@@ -13,12 +15,21 @@ const projectViewControl = (() => {
         domManip.makeEl(getModalCard, 'div', 'v-item-desc-head', "Description: ")
         domManip.makeEl(getModalCard, 'div', 'v-item-desc', desc);
         domManip.makeEl(getModalCard, 'div', 'v-item-date-head', "Date to finish by")
-        domManip.makeEl(getModalCard, 'div', 'v-item-date', date);
-        // console.log(itemId);
+        // domManip.makeEl(getModalCard, 'div', 'v-item-date', date);
+        domManip.makeEl(getModalCard, 'input', 'v-item-form', "test");
+        const getForm = domManip.grabEl('v-item-form');
+        getForm.setAttribute("type", "date");
+        const finalValue = (format (new Date(date),'2022-MM-dd'))
+        getForm.setAttribute("value", finalValue);
 
         getModalClose.addEventListener('click', () => {
                 const getBg = domManip.grabEl('modal-bg');
                 const getCard = domManip.grabEl('modal-card');
+                //get result and update date, re-render body.
+                const getForm = domManip.grabEl('v-item-form');
+                const result = format(new Date(getForm.value), 'MMM dd');
+                cardRender.todos[itemId].completeDate = result;
+                renderPage.renderBody(cardRender.todos);
                 getBg.parentNode.removeChild(getBg);
                 getCard.parentNode.removeChild(getCard);
         })
