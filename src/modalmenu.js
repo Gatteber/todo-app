@@ -96,6 +96,9 @@ const modalRender = (() => {
         const formDropItem = domManip.grabEl('item-dd-label');
         formDropItem.setAttribute("id", "itemDd");
         domManip.makeEl(formDropItem, 'option', 'test', "Default");
+        cardRender.projects.map(proj => {
+            domManip.makeEl(formDropItem, 'option', 'test', `${proj}`);
+        })
         //render other items
 
         //submit button
@@ -130,6 +133,13 @@ const modalRender = (() => {
         domManip.makeEl(getModalSettings, 'button', 'proj-submit', "Submit");
         const getItemButton = domManip.grabEl('proj-submit');
         getItemButton.setAttribute("id", "submit");
+        getModalSettings.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const newProj = document.getElementById('projName').value;
+            cardRender.projects.push(newProj);
+            getModalSettings.reset();
+            delModal();
+        })
     }
 
     return { render, newItem, newProject }

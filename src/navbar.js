@@ -1,5 +1,6 @@
 import { domManip, renderPage } from './pageinit';
 import { modalRender } from "./modalmenu";
+import { cardRender } from './cardcontroller';
 
 //navbar module
 const navBarControl = (() => {
@@ -47,11 +48,26 @@ const renderNavItem = (() => {
 
         } else if (domElement.classList == "nav-projects active") {
             //render nav projects
-            console.log("i'm being worked on!");
             domManip.makeEl(renderPage.getContent, 'div', 'nav-proj-menu');
             const getProjMenuBody = domManip.grabEl('nav-proj-menu');
             domManip.makeEl(getProjMenuBody, 'div', 'proj-item', "All Projects");
-            domManip.makeEl(getProjMenuBody, 'div', 'proj-item', "Test Project");
+
+            //render array
+            cardRender.projects.map(proj => {
+                domManip.makeEl(getProjMenuBody, 'div', 'proj-item', `${proj}`);
+            })
+
+            const getProjects = document.querySelectorAll('.proj-item');
+            getProjects.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    //deprecated but works for now
+                    if (e.srcElement.innerHTML === "All Projects") {
+                        renderPage.renderBody(cardRender.todos);
+                    }
+                    //search projects and find matching item, then render
+                    console.log(e.srcElement.innerHTML);
+                })
+            })
         }
     };
 
