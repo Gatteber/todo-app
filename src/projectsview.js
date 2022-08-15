@@ -15,12 +15,12 @@ const projectViewControl = (() => {
         domManip.makeEl(getModalCard, 'div', 'v-item-desc-head', "Description: ")
         domManip.makeEl(getModalCard, 'div', 'v-item-desc', desc);
         domManip.makeEl(getModalCard, 'div', 'v-item-date-head', "Date to finish by")
-        // domManip.makeEl(getModalCard, 'div', 'v-item-date', date);
         domManip.makeEl(getModalCard, 'input', 'v-item-form', "test");
         const getForm = domManip.grabEl('v-item-form');
         getForm.setAttribute("type", "date");
         const finalValue = (format (new Date(date),'2022-MM-dd'))
         getForm.setAttribute("value", finalValue);
+        console.log(cardRender.todos[itemId]);
 
         getModalClose.addEventListener('click', () => {
                 const getBg = domManip.grabEl('modal-bg');
