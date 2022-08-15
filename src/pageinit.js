@@ -40,9 +40,12 @@ const renderPage = (() => {
             getCardBody.appendChild(newCard);
             newCard.classList.add('card-item');
             newCard.addEventListener('click', (e) => {
+                //prevent window error on click but still gives modal
+                if (e.path[0].classList.value === 'card-item') {
                 const targetId = e.target.id
                 const findId = targetId.slice(4, 5);
                 projectViewControl.renderItemView(cardRender.todos[findId].itemName, cardRender.todos[findId].itemDesc, cardRender.todos[findId].completeDate, findId);
+                }
             })
         }
 
@@ -74,6 +77,10 @@ const renderPage = (() => {
                 toDoDeleter.delThis(slicedId);
             })
         })
+        // const stringArray = JSON.stringify(spreadArray);
+        // // console.log(stringArray);
+        // localStorage.setItem("Parse", stringArray)
+        // console.log(localStorage);
     }
     
     // domManip.makeEl(getCardBody, 'div', 'card-item', "Pick up Groceries");

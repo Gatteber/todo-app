@@ -4,6 +4,7 @@ import { renderPage } from "./pageinit";
 import  { navBarControl, renderNavItem } from "./navbar";
 import "./projectsview";
 import { modalRender } from "./modalmenu";
+import { cardRender } from "./cardcontroller";
 
 
 //nav bar event module
@@ -33,12 +34,22 @@ const navBarEventControl = (() => {
 
 //app main module
 const mainApp = (() => {
-    console.log("I'm from index");
-    // modalRender.render();
-    // modalRender.newItem();
-    // modalRender.newProject();
+    window.onbeforeunload = () => {
+        for (let i = 0; i < cardRender.todos.length; i++) {
+            const saveTodoItem = JSON.stringify(cardRender.todos[i]);
+            localStorage.setItem(i, saveTodoItem);
+        }
+    }
 
-    // renderPage.renderBody();
+    for (let i = 0; i < localStorage.length; i++) {
+        const getItem = JSON.parse(localStorage[i]);
+        cardRender.todos.push(getItem);
+    }
+    // console.log(JSON.parse(localStorage[0]));
+    // console.log(localStorage.length);
+    // console.log(cardRender.todos);
+    renderPage.renderBody(cardRender.todos);
+    localStorage.clear();
 
 })();
 

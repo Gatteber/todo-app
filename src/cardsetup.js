@@ -22,7 +22,8 @@ const toDoDeleter = (() => {
     const delThis = (id) => {
         // console.log(cardRender.todos[id]);
         cardRender.todos.splice(id, 1);
-        renderPage.renderBody([...cardRender.localTodos, ...cardRender.todos]);
+        // renderPage.renderBody([...cardRender.localTodos, ...cardRender.todos]);
+        renderPage.renderBody(cardRender.todos)
     }
 
     return { delThis };
