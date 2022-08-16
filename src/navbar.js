@@ -1,6 +1,7 @@
 import { domManip, renderPage } from './pageinit';
 import { modalRender } from "./modalmenu";
 import { cardRender } from './cardcontroller';
+import { format } from 'date-fns';
 
 //navbar module
 const navBarControl = (() => {
@@ -38,7 +39,14 @@ const renderNavItem = (() => {
 
         } else if (domElement.classList == "nav-today active") {
             //render today's tasks
-            console.log("i'm under construction!");
+            const result = format(new Date(), 'MMM dd');
+            cardRender.todos.map (item => {
+                if (item.completeDate === result) {
+                    cardRender.localTodos.push(item);
+                }
+                renderPage.renderBody(cardRender.localTodos);
+            })
+            cardRender.localTodos = [];
             navBarControl.close(domElement);
 
         } else if (domElement.classList == "nav-week active") {
@@ -61,11 +69,17 @@ const renderNavItem = (() => {
             getProjects.forEach(item => {
                 item.addEventListener('click', (e) => {
                     //deprecated but works for now
+                    //search projects and find matching item, then render
+                    cardRender.todos.map(todo => {
+                        if (todo.projName === e.srcElement.innerHTML) {
+                            cardRender.localTodos.push(todo);
+                            renderPage.renderBody(cardRender.localTodos);
+                        }
+                    })
                     if (e.srcElement.innerHTML === "All Projects") {
                         renderPage.renderBody(cardRender.todos);
                     }
-                    //search projects and find matching item, then render
-                    console.log(e.srcElement.innerHTML);
+                    cardRender.localTodos = [];
                 })
             })
         }
