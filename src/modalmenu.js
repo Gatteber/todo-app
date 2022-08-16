@@ -81,6 +81,7 @@ const modalRender = (() => {
         domManip.makeEl(getModalSettings, 'input', 'item-name');
         const formItemName = domManip.grabEl('item-name');
         formSetter.formInputSet(formItemName, "text", "item_name", "itemName", "e.g. Cook Dinner");
+        formItemName.setAttribute('maxlength', '20');
         //description
         domManip.makeEl(getModalSettings, 'label', 'item-desc-label', "Description: ")
         const descNameLabel = domManip.grabEl('item-desc-label');
@@ -129,6 +130,7 @@ const modalRender = (() => {
         domManip.makeEl(getModalSettings, 'input', 'proj-name');
         const formItemName = domManip.grabEl('proj-name');
         formSetter.formInputSet(formItemName, "text", "proj_name", "projName", "e.g. My Cool Project");
+        formItemName.setAttribute('maxlength', '10');
         //submit button
         domManip.makeEl(getModalSettings, 'button', 'proj-submit', "Submit");
         const getItemButton = domManip.grabEl('proj-submit');

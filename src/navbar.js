@@ -52,6 +52,7 @@ const renderNavItem = (() => {
         } else if (domElement.classList == "nav-week active") {
             //render this week's tasks
             console.log("i'm under construction too!");
+            modalRender.render();
             navBarControl.close(domElement);
 
         } else if (domElement.classList == "nav-projects active") {

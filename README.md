@@ -39,6 +39,14 @@ submit form -> preventdefault -> make class -> add to "todo" array, stringify an
 render todo array (of objects). done
 date functionality. done
 modal click expansion. kinda done
-Projects views.
+Projects views. done
+
+
+final todo:
+set max characters on forms done
+change week -> guide (just a modal render with instructions)
+projects view styling
+local storage for projects???
+bug testing (make sure it looks good on all devices)
 
 Remember to set the max characters for your forms!!

@@ -97,7 +97,7 @@
     }
 
     .nav-week {
-        background-image: url(/src/img/alpha-w-box-outline.svg);
+        background-image: url(/src/img/help-icon.svg);
     }
 
     .nav-projects {
@@ -154,7 +154,7 @@
         }
 
         .nav-week::after {
-            content: "Week"
+            content: "Help"
         }
 
         .nav-projects::after {
