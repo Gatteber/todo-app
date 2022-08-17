@@ -267,6 +267,8 @@
     @include breakpoints.desktop {
 
         .card-item {
+            width: 40vh;
+
             .card-date {
                 font-size: 2rem;
             }

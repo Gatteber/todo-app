@@ -51,7 +51,6 @@ const renderPage = (() => {
 
         //render
         spreadArray.map((todo, index) => {
-            // console.log(todo);
             const getCardIndex = document.getElementById(`card${index}`);
             domManip.makeEl(getCardIndex, 'div', 'card-text', `${todo.itemName}`);
             domManip.makeEl(getCardIndex, 'div', 'card-done');

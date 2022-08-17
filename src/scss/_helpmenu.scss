@@ -5,7 +5,7 @@
     font-size: 2rem;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
-    border-bottom: 1px solid colors.$stone900;
+    border-bottom: 2px solid colors.$stone900;
 }
 
 .help-info {
@@ -20,4 +20,19 @@
     padding-top: 0.5rem;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+}
+
+@include breakpoints.tablet {
+    .help-title {
+        font-size: 3rem;
+    }
+
+    .help-info {
+        font-size: 2rem;
+    }
+
+    .help-footer {
+        font-size: 1rem;
+    }
+
 }

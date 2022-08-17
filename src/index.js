@@ -22,7 +22,7 @@ const navBarEventControl = (() => {
                         navBarControl.isActive = false;
                         renderNavItem.delRender();
                     }
-                }, "3000");
+                }, "2000");
 
             } else if (navBarControl.isActive) {
                 navBarControl.close(item);

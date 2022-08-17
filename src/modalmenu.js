@@ -115,7 +115,6 @@ const modalRender = (() => {
             cardRender.todos.push(newTodo);
             getModalSettings.reset();
             delModal();
-            // renderPage.renderBody([...cardRender.localTodos, ...cardRender.todos])
             renderPage.renderBody(cardRender.todos)
         })
     }

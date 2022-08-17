@@ -45,6 +45,17 @@ Projects views. done
 final todo:
 set max characters on forms done
 change week -> guide (just a modal render with instructions) done.
-projects view styling
-local storage for projects???
-bug testing (make sure it looks good on all devices)
+projects view styling done
+local storage for projects??? seems impossible with how I implemented saving.
+bug testing (make sure it looks good on all devices) done.
+
+
+
+###### Reflection
+It's finished. To be honest, this project was, I think, extremely overwhelming. I wasn't prepared for how much work it was going to take to make everything, and when I decided to try to make a fully responsive app along with the features I had chosen, I severely underestimated how much time it was going to take. However, on the other hand, for the most part, everything went smoothly. There are definitely still some bugs with how the app functions. In retrospect, while I wanted to make an "auto-close" menu, that ended up becoming kind of buggy, and to be honest it doesn't work the way I think it should. However, I have no idea how to fix it, and I'm proud of myself for at least attempting it, so for now I'll leave it. If this were some kind of real situation, it would definitely be refactored.
+
+I clearly need to spend more time understanding SOLID principles. I tried to divide projects out, but to be honest, I really struggled to understand what should be its own module, how I should change things, where they should be changed, and so on. I think maybe it's a good idea to go look at some more professional projects and study what they have done at some point, as the way I approached it got quite messy, I think.
+
+I wanted to have projects stored locally too, but the way I approached my local projects implementation was, not good. I think I also need to spend more time understanding how you would use localStorage for storing multiple types of data. I think I understand the theory, but implementing it was too complicated, and to be honest, I'm a little burned out on this project. I may come back at some point to fix it.
+
+Overall, I was really happy that everything turned out to work responsively and everything functions pretty well. It feels like things are kind of making sense. Just remember, never give up!

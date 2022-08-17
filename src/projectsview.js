@@ -21,7 +21,6 @@ const projectViewControl = (() => {
         getForm.setAttribute("type", "date");
         const finalValue = (format (new Date(date),'2022-MM-dd'))
         getForm.setAttribute("value", finalValue);
-        console.log(cardRender.todos[itemId]);
 
         getModalClose.addEventListener('click', () => {
                 const getBg = domManip.grabEl('modal-bg');
