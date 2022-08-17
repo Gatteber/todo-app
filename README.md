@@ -44,9 +44,7 @@ Projects views. done
 
 final todo:
 set max characters on forms done
-change week -> guide (just a modal render with instructions)
+change week -> guide (just a modal render with instructions) done.
 projects view styling
 local storage for projects???
 bug testing (make sure it looks good on all devices)
-
-Remember to set the max characters for your forms!!

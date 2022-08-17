@@ -2,6 +2,7 @@ import { domManip, renderPage } from './pageinit';
 import { modalRender } from "./modalmenu";
 import { cardRender } from './cardcontroller';
 import { format } from 'date-fns';
+import { renderHelpMenu } from './helpmenu';
 
 //navbar module
 const navBarControl = (() => {
@@ -50,9 +51,7 @@ const renderNavItem = (() => {
             navBarControl.close(domElement);
 
         } else if (domElement.classList == "nav-week active") {
-            //render this week's tasks
-            console.log("i'm under construction too!");
-            modalRender.render();
+            renderHelpMenu.renderHelp();
             navBarControl.close(domElement);
 
         } else if (domElement.classList == "nav-projects active") {

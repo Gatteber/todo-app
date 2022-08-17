@@ -5,6 +5,7 @@ import  { navBarControl, renderNavItem } from "./navbar";
 import "./projectsview";
 import { modalRender } from "./modalmenu";
 import { cardRender } from "./cardcontroller";
+import { renderHelpMenu } from "./helpmenu";
 
 
 //nav bar event module
@@ -47,5 +48,7 @@ const mainApp = (() => {
     }
     renderPage.renderBody(cardRender.todos);
     localStorage.clear();
+
+    renderHelpMenu.renderHelp();
 })();
 

@@ -10,6 +10,7 @@ const projectViewControl = (() => {
         const getModalClose = domManip.grabEl('modal-bg');
         domManip.makeEl(renderPage.getContent, 'div', 'modal-card');
         const getModalCard = domManip.grabEl('modal-card');
+        getModalCard.classList.add('modal-card-settings');
         domManip.makeEl(getModalCard, 'div', 'v-item-name-head', "Item Name: ")
         domManip.makeEl(getModalCard, 'div', 'v-item-name', name);
         domManip.makeEl(getModalCard, 'div', 'v-item-desc-head', "Description: ")
